@@ -29,6 +29,7 @@ export default function HomeScreen() {
       <Plane>
         {sprites.map((sprite, ind) => (
           <Sprite
+            index={ind}
             position={{ x: sprite.x, y: sprite.y }}
             angle={sprite.angle}
             message={sprite.message}
@@ -43,7 +44,6 @@ export default function HomeScreen() {
           for (const action of state.actions) {
             for (const sprite of sprites) {
               if (action.metaData.timeout) {
-                sprite.setText("hhh");
                 performAsyncAction(
                   sprite,
                   sprite[

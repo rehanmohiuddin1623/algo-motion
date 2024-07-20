@@ -16,13 +16,16 @@ const Sprite = ({
   position,
   angle = 0,
   message,
+  index,
 }: ISprite & {
   angle?: number;
+  index: number;
 }) => {
   const { x = 0, y = 0 } = position || {};
 
   return (
     <View
+      key={index}
       style={{
         position: "relative",
         backgroundColor: "#fff",
